@@ -12,13 +12,14 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 describe('1 - O retorno do telefonema', () => {
   test('atende', () => (
     answerPhone(true).then((response) => {
-      expect(response).toBe('Oi!');
+      expect(response).toEqual('Oi!');
     })
   ));
+
   test('ocupado', () => {
     expect.assertions(1);
-    answerPhone(true).catch((error) => {
-      expect(error.message).toMatch('Infelizmente não podemos atender...');
-    });
+    return answerPhone(false).catch((error) => (
+      expect(error.message).toMatch('Infelizmente não podemos atender...')
+    ));
   });
 });
