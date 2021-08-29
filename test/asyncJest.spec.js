@@ -11,7 +11,7 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 
 describe('1 - O retorno do telefonema', () => {
   test('atende', () => {
-    answerPhone(true).then((response) => {
+    answerPhone('teste').then((response) => {
       expect(response).toBe('Oi!');
     });
   });
