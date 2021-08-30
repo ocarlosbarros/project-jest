@@ -26,7 +26,9 @@ describe('4 - Quem sobreviveu?', () => {
   });
 
   afterEach(() => {
-    console.log(`Parabéns!! Você sobreviveu aos testes da Trybe Land ${specialists[0].nome}`);
+    if (specialists.length === 1) {
+      console.log(`Parabéns!! Você sobreviveu aos testes da Trybe Land ${specialists[0].nome}`);
+    }
   });
 
   test('depois da primeira aventura', () => {
