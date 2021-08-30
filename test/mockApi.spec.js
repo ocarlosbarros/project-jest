@@ -23,7 +23,8 @@ ATENÇÃO!!! Edite apenas este arquivo. Não altere os arquivos da pasta 'src'.
 */
 
 describe('2 - Verifica o usuário', () => {
-  // Crie sua mock da função fetchURL() aqui
+  const fetchURL = jest.spyOn(api, 'fetchURL');
+  afterEach(fetchURL.mockReset);
 
   test('verifica se o usuário é o tunico', async () => (
     api.fetchURL().then((user) => {
